@@ -6,15 +6,18 @@
   "scripts": {
     "webpack": "webpack --watch",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@webpack-cli/serve": "^1.4.0",
+    "file-loader": "^6.2.0",
+    "image-webpack-loader": "^6.0.0",
     "webpack": "^5.37.1",
-    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
   },
