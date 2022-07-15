@@ -1,6 +1,8 @@
 const APP_PREFIX = 'FoodEvent-';     
 const VERSION = 'version_01';
+
 const CACHE_NAME = APP_PREFIX + VERSION
+
 const FILES_TO_CACHE = [
   "./index.html",
   "./events.html",
@@ -45,6 +47,7 @@ self.addEventListener('install', function (e) {
 })
 
 // Delete outdated caches
+
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
@@ -62,6 +65,7 @@ self.addEventListener('activate', function (e) {
           return caches.delete(keyList[i]);
         }
       }));
+
     })
   );
 });
