@@ -1,6 +1,10 @@
-require('bootstrap')
-const createEl = require('./domMethods')
-if (window.location.href.indexOf("event") > -1) {
+require('bootstrap');
+const createEl = require('./domMethods');
+const createLoremIpsum = require('./helpers');
+
+$(document).ready(function() {
+
+  if (window.location.href.indexOf("event") > -1) {
     const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
         title: "Title Placeholder",
         subtitle: "",
@@ -11,7 +15,7 @@ if (window.location.href.indexOf("event") > -1) {
     
     const containerEl = createEl("div", {class: "container"},
       createEl("div", {class: "card mb-3"}, 
-        createEl("img", {class: "card-img-top", src: currentEvent.image || "https://via.placeholder.com/350x150"}),
+        createEl("img", {class: "card-img-top", style: "width: 5px", src: currentEvent.image || "https://via.placeholder.com/350x150"}),
         createEl("div", {class: "card-body"}, 
           createEl("h1", {class: "card-title"}, currentEvent.title || ""),
           createEl("h2", {class: "text-muted"}, currentEvent.subtitle || ""),
@@ -22,6 +26,6 @@ if (window.location.href.indexOf("event") > -1) {
       
     )
     
-
     pageEl.appendChild(containerEl)
-  }
+    }
+});
